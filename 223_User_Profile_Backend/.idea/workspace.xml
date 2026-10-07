@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42f9751b-b4e9-40fa-b6f5-d7c00ef48fe1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Part 1/Code/Main/src/CalculatePrice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Part 1/Code/Main/src/TestCalculatePrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/223_User_Profile_Backend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiceCalc/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiceCalc/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiceCalc/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiceCalc/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiceCalc/PiceCalc.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiceCalc/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Grundlagen(Originaltätsbeweis) .pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-    </list>
+    <list default="true" id="42f9751b-b4e9-40fa-b6f5-d7c00ef48fe1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1791214536243</updated>
-      <workItem from="1791214537831" duration="1122000" />
+      <workItem from="1791214537831" duration="1716000" />
     </task>
     <servers />
   </component>
