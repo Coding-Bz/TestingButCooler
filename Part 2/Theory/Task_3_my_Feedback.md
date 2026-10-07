@@ -1,6 +1,5 @@
 # Übung 3 – Teststrategie Bank-Software
 
-Setup: Maven project in IntelliJ (OpenJDK 24, OkHttp 5.0.0-alpha.11, Gson 2.8.2), main class `ch.tbz.bank.software.Main`.
 At start the program says: *"Es gibt 5 Konten mit den Nummern 1–5."*
 
 Accounts: Nr. 1 Rockefeller (USD, 1500), Nr. 2 Gates (EUR, 2000), Nr. 3 Musk (CHF, 23500), Nr. 4 Bezos (EUR, 100.50), Nr. 5 Branson (USD, 1500000).
