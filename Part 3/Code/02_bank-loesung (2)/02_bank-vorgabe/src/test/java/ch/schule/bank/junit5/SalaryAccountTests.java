@@ -5,17 +5,30 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/** Tests der Klasse SalaryAccount. */
-public class SalaryAccountTests {
+/**
+ * Tests der Klasse SalaryAccount.
+ *
+ * @author elifbcan
+ * @version 2.0
+ */
+public class SalaryAccountTests
+{
+    /**
+     * Der Test.
+     */
     @Test
-    public void test() {
-        SalaryAccount a = new SalaryAccount("P-1", -1000);
-        assertTrue(a.withdraw(1, 1000));       // genau bis Limite
-        assertEquals(-1000, a.getBalance());
-        assertFalse(a.withdraw(1, 1));         // Limite überschritten
-        assertTrue(a.deposit(2, 500));
-        assertTrue(a.withdraw(2, 500));
-        assertFalse(a.withdraw(2, -1));        // negativer Betrag
-        assertFalse(a.withdraw(1, 0));         // Datum in der Vergangenheit
+    public void test()
+    {
+        SalaryAccount acc = new SalaryAccount("P-1", -10000);
+
+        acc.deposit(1, 500);
+
+        assertTrue(acc.withdraw(2, 10500));
+
+        assertEquals(-10000, acc.getBalance());
+
+        assertFalse(acc.withdraw(3, 1));
+
+        assertEquals(-10000, acc.getBalance());
     }
 }

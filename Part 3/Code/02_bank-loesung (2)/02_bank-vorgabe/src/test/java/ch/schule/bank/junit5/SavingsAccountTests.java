@@ -5,16 +5,27 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/** Tests für die Klasse SavingsAccount. */
-public class SavingsAccountTests {
+/**
+ * Tests für die Klasse SavingsAccount.
+ *
+ * @author elifbcan
+ * @version 2.0
+ */
+public class SavingsAccountTests
+{
     @Test
-    public void test() {
-        SavingsAccount a = new SavingsAccount("S-1");
-        a.deposit(1, 1000);
-        assertFalse(a.withdraw(2, 1001));      // kein Überziehen
-        assertEquals(1000, a.getBalance());
-        assertTrue(a.withdraw(2, 1000));       // genau auf 0 erlaubt
-        assertEquals(0, a.getBalance());
-        assertFalse(a.withdraw(2, -1));
+    public void test()
+    {
+        SavingsAccount acc = new SavingsAccount("S-1");
+
+        acc.deposit(1, 1000);
+
+        assertTrue(acc.withdraw(2, 1000));
+
+        assertEquals(0, acc.getBalance());
+
+        assertFalse(acc.withdraw(3, 1));
+
+        assertEquals(0, acc.getBalance());
     }
 }

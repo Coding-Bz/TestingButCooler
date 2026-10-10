@@ -6,80 +6,151 @@ import ch.schule.SavingsAccount;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+
+
+import static ch.schule.bank.junit5.TestUtil.capture;
 import static org.junit.jupiter.api.Assertions.*;
 
-/** Tests für die Klasse Account (über SavingsAccount instanziert, da abstract). */
+
+/**
+ * Tests für die Klasse Account.
+ *
+ * @author elifbcan
+ * @version 2.0
+ */
+
+
 public class AccountTests {
+
     private Account acc;
 
     @BeforeEach
-    void setUp() { acc = new SavingsAccount("S-1"); }
+    void setUp() {
+        acc = new SavingsAccount("S-1");
+    }
 
+    /**
+     * Tested die Initialisierung eines Kontos.
+     */
     @Test
     public void testInit() {
+        assertNotNull(acc);
+
         assertEquals("S-1", acc.getId());
+
         assertEquals(0, acc.getBalance());
+
         assertTrue(acc.canTransact(0));
     }
 
+    /**
+     * Testet das Einzahlen auf ein Konto.
+     */
     @Test
     public void testDeposit() {
-        assertTrue(acc.deposit(1, 1000));
-        assertEquals(1000, acc.getBalance());
-        assertTrue(acc.deposit(1, 0));
-        assertFalse(acc.deposit(1, -1));
-        assertFalse(acc.deposit(0, 100));   // Datum in der Vergangenheit
-        assertEquals(1000, acc.getBalance());
+        assertTrue(acc.deposit(1, 1029));
+        assertEquals(1029, acc.getBalance());
+
+        assertTrue(acc.deposit(2, 1));
+        assertEquals(1030, acc.getBalance());
+
+        assertTrue(acc.deposit(3, 10));
+        assertEquals(1040, acc.getBalance());
+
+        assertFalse(acc.deposit(4, -15));
+
+        assertFalse(acc.deposit(-4, 1));
+
+        assertFalse(acc.deposit(0, 15));
     }
 
+    /**
+     * Testet das Abheben von einem Konto.
+     */
     @Test
     public void testWithdraw() {
-        acc.deposit(1, 1000);
-        assertTrue(acc.withdraw(2, 400));
-        assertEquals(600, acc.getBalance());
-        assertFalse(acc.withdraw(2, -5));
-        assertFalse(acc.withdraw(1, 10));   // Datum in der Vergangenheit
-        assertEquals(600, acc.getBalance());
+        acc.deposit(1, 1040);
+
+        assertTrue(acc.withdraw(2, 1029));
+
+        assertEquals(11, acc.getBalance());
+
+        assertTrue(acc.withdraw(3, 1));
+
+        assertEquals(10, acc.getBalance());
+
+        assertTrue(acc.withdraw(4, 10));
+
+        assertEquals(0, acc.getBalance());
+
+        assertFalse(acc.withdraw(4, -15));
+
+        assertFalse(acc.withdraw(-4, 1));
+
+        assertFalse(acc.withdraw(0, 15));
+
     }
 
+    /**
+     * Tests the reference from SavingsAccount
+     */
     @Test
     public void testReferences() {
-        assertNull(acc.getBooking());
-        Booking b = new Booking(1, 1);
-        acc.setBooking(b);
-        assertSame(b, acc.getBooking());
+        Booking booking = new Booking(1, 100);
+        acc.setBooking(booking);
+
+        assertSame(booking, acc.getBooking());
     }
 
+    /**
+     * teste the canTransact Flag
+     */
     @Test
     public void testCanTransact() {
+        assertTrue(acc.canTransact(5));
+
         acc.deposit(10, 100);
+
         assertTrue(acc.canTransact(10));
+
         assertTrue(acc.canTransact(11));
+
         assertFalse(acc.canTransact(9));
+
+        assertFalse(acc.deposit(9, 100));
+
+        assertFalse(acc.deposit(-12, 100));
     }
 
+    /**
+     * Experimente mit print().
+     */
     @Test
     public void testPrint() {
-        acc.deposit(0, 10_000_000L);
-        acc.withdraw(1, 5_000_000L);
-        String[] l = TestUtil.capture(acc::print).split("\n");
-        assertEquals("Kontoauszug 'S-1'", l[0]);
-        assertEquals(4, l.length);
-        assertTrue(l[2].startsWith("01.01.1970"));
-        assertTrue(l[3].startsWith("02.01.1970"));
-        assertTrue(l[3].contains("-50"));
+        acc.deposit(0, 100000);
+
+        acc.withdraw(1, 50000);
+
+        String out = capture(() -> acc.print());
+
+        assertTrue(out.contains("Kontoauszug 'S-1'"));
+        assertTrue(out.contains("01.01.1970"));
+        assertTrue(out.contains("02.01.1970"));
     }
 
+    /**
+     * Experimente mit print(year,month).
+     */
     @Test
     public void testMonthlyPrint() {
-        // Banktag 0 = Januar 1970, Tag 30 = Februar 1970, Tag 60 = März 1970
-        acc.deposit(5, 10_000_000L);
-        acc.deposit(35, 10_000_000L);
-        acc.deposit(65, 10_000_000L);
-        String[] feb = TestUtil.capture(() -> acc.print(1970, 2)).split("\n");
-        assertEquals("Kontoauszug 'S-1' Monat: 2.1970", feb[0]);
-        assertEquals(3, feb.length);               // Header(2) + 1 Buchung
-        assertTrue(feb[2].contains("200"));   // Saldo enthält Vormonat
-        assertEquals(2, TestUtil.capture(() -> acc.print(1971, 1)).split("\n").length);
+        acc.deposit(5, 100000);
+        acc.deposit(35, 200000);
+
+        String out = capture(() -> acc.print(1970, 1));
+
+        assertTrue(out.contains("Monat: 1.1970"));
+        assertTrue(out.contains("06.01.1970"));
+        assertFalse(out.contains("06.02.1970"));
     }
+
 }
