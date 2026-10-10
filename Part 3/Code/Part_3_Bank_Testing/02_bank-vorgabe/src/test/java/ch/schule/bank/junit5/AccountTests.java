@@ -87,7 +87,7 @@ public class AccountTests {
 
         assertFalse(acc.withdraw(-4, 1));
 
-        assertFalse(acc.withdraw(0, 15));
+        assertFalse(acc.withdraw(5, 15));
 
     }
 

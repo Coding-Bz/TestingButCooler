@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd779577-61dd-4ab7-8aed-f61a43350f78" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3KSUDOdCnGgyik2hVhoLLLEUfZT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestBank.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountTests.testCanTransact.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountTests.testDeposit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountTests.testInit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccountTests.testWithdraw.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BankTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BankTests.testCreate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BankTests.testDeposit.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookingTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BookingTests.testInitialization.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PromoYouthSavingsAccountTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SalaryAccountTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SavingsAccountTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ch.schule.bank.junit5 in bank0.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.junit5 in bank0.executor&quot;: &quot;Coverage&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/TestingButCooler/Part 3/Code/02_bank-loesung (2)&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.junit5 in bank0">
+    <configuration name="AccountTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bank0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch.schule.bank.junit5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ch.schule.bank.junit5" />
+      <option name="MAIN_CLASS_NAME" value="ch.schule.bank.junit5.AccountTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BankTests.testCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bank0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch.schule.bank.junit5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ch.schule.bank.junit5" />
+      <option name="MAIN_CLASS_NAME" value="ch.schule.bank.junit5.BankTests" />
+      <option name="METHOD_NAME" value="testCreate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BankTests.testDeposit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bank0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch.schule.bank.junit5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ch.schule.bank.junit5" />
+      <option name="MAIN_CLASS_NAME" value="ch.schule.bank.junit5.BankTests" />
+      <option name="METHOD_NAME" value="testDeposit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookingTests.testInitialization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bank0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch.schule.bank.junit5.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ch.schule.bank.junit5" />
+      <option name="MAIN_CLASS_NAME" value="ch.schule.bank.junit5.BookingTests" />
+      <option name="METHOD_NAME" value="testInitialization" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="junit5 in bank0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bank0" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/02_bank-vorgabe/src/test/java/ch/schule/bank/junit5" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.junit5 in bank0" />
+        <item itemvalue="JUnit.BookingTests.testInitialization" />
+        <item itemvalue="JUnit.BankTests.testDeposit" />
+        <item itemvalue="JUnit.BankTests.testCreate" />
+        <item itemvalue="JUnit.AccountTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.29188.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.29188.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd779577-61dd-4ab7-8aed-f61a43350f78" name="Changes" comment="" />
+      <created>1791550343107</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1791550343107</updated>
+      <workItem from="1791550344366" duration="2467000" />
+      <workItem from="1791625876014" duration="5275000" />
+      <workItem from="1791633222037" duration="215000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/02_bank-vorgabe/src/test/java/ch/schule/bank/junit5/BankTests.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/02_bank-vorgabe/src/test/java/ch/schule/bank/junit5/BankTests.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/02_bank_loesung__2_$CalculatorTest.ic" NAME="CalculatorTest Coverage Results" MODIFIED="1791552785851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ch.schule.calculator.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/02_bank_loesung__2_$junit5_in_bank0.ic" NAME="junit5 in bank0 Coverage Results" MODIFIED="1791632738938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/02_bank_loesung__2_$ch_schule_bank_junit5_in_bank0.ic" NAME="ch.schule.bank.junit5 in bank0 Coverage Results" MODIFIED="1791551483071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ch.schule.bank.junit5.*</FILTER>
+    </SUITE>
+  </component>
+</project>
