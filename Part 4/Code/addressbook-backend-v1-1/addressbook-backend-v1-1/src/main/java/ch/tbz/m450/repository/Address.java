@@ -22,8 +22,9 @@ public class Address {
     @Column(name = "user_id")
 
     private int id;
-    private String firstname;
-    private String lastname;
-    private String phonenumber;
-    private Date registrationDate;
+    private Integer priority;
+    private String firstname; //0
+    private String lastname; //1
+    private String phonenumber;//2
+    private Date registrationDate;//3
 }
