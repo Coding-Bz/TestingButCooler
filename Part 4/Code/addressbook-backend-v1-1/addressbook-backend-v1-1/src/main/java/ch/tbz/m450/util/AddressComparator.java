@@ -8,6 +8,19 @@ import static ch.tbz.m450.util.HelperFunc.compareIfBothPresent;
 
 public class AddressComparator implements Comparator<Address> {
 
+    public List<Address> sort(List<Address> addresses) {
+        List<Address> result = new ArrayList<>(addresses);
+        for (int i = 1; i < result.size(); i++) {
+            Address key = result.get(i);
+            int j = i - 1;
+            while (j >= 0 && compare(result.get(j), key) > 0) {
+                result.set(j + 1, result.get(j));
+                j--;
+            }
+            result.set(j + 1, key);
+        }
+        return result;
+    }
 
     @Override
     public int compare(Address a1, Address a2) {
