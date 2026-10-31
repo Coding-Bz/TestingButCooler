@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - "Part 6/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+          
+      - name: Locate backend
+        run: echo "BACKEND_DIR=$(dirname "$(find 'Part 6' -path '*recipe-planner-backend/pom.xml' | head -1)")" >> "$GITHUB_ENV"
+
+      - name: Run unit tests (Surefire + JaCoCo)
+        run: |
+          cd "$BACKEND_DIR"
+          mvn -B test
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            ${{ env.BACKEND_DIR }}/target/site/jacoco/
+            ${{ env.BACKEND_DIR }}/target/surefire-reports/
