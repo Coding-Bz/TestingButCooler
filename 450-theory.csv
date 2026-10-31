@@ -1,0 +1,213 @@
+﻿Code Reviews
+TDD
+Intro Module
+Test Strategy
+Test Levels
+Test Doubles
+What Is a Code Review
+Most influential ideas in modern software engineering
+As you move up the pyramid, tests become slower, more complex, and take more time to maintain
+Test Levels
+M450 - Applikationen testen
+Test Strategy
+Process where one or more developers examine someone else’s code
+Merged into the main codebase
+Test-Driven Development (TDD) is a software development process where you write tests before writing the actual code
+Origin
+Stunt doubles in movies (a person who substitutes for dangerous scenes)
+Key concept that illustrates how different test levels should be distributed within a test suite
+'- write a failing test first - write just enough code to make it pass - then improve (refactor) the code'
+Step 1: Write a failing test (RED)
+Tests at the base of the pyramid should make up the majority of the tests, as they are generally faster and less complex
+Core idea
+Ensuring Quality in a Digital World
+Now, if you run this test (for example, using IntelliJ IDEA or Maven),  you’ll get a compiler error like: Cannot find symbol: class DiscountCalculator
+Focusing most testing efforts at the base is essential for efficient and comprehensive quality assurance
+A Test Strategy is a high-level document or guideline that defines the overall approach and principles for testing within a software project or organization.
+how do we test?
+A test double is a replacement object that is used in a test instead of a real component
+It includes a set of activities conducted (geführt) with the intent of finding errors (bugs) in software
+What is Software Testing?
+Perfect — that’s the RED phase — the test fails because the code doesn’t exist yet
+Definition: Software testing is a process to identify the correctness, completeness, and quality of developed computer software
+Goal
+Meaning
+Why It Matters
+Think of it as the roadmap for testing
+It doesn’t go into specific test cases (that’s the test plan),
+Step 2: Write the minimum code to pass (GREEN)
+Catch bugs early
+Reviewers look for logical errors, potential crashes, or security issues
+Fixing issues early is way cheaper than after deployment
+The goal is to correct these errors before the product is released to end-users, ensuring the software system is defect-free
+the real dependency is difficult to use (e.g. database or API)
+but it defines the framework and philosophy of testing 
+Purpose: Designed to test individual functions or methods within your code
+Knowledge sharing
+Team members learn from each other’s code and design decisions
+Helps avoid “knowledge silos
+China Airlines Airbus A300 crash (1994)
+Due to a software bug, killing 264 innocent lives
+﻿Checking that a function returns the proper value given specific arguments
+Used when
+you want to simulate certain situations more easily (e.g., error cases)
+Main Goals
+Consistency & style
+Ensures code follows team style guides and architecture patterns
+Makes the codebase easier to maintain
+Level 1: Unit Testing – The Base of the Pyramid
+Characteristics: Unit tests are the fastest and most granular type of test
+Why is Testing Important? The Cost of Bugs
+you want to explicitly control the behavior
+Improve performance and efficiency
+Reviewers might suggest more optimal algorithms or database queries
+Keeps your app fast and scalable
+Typically run as part of the build process
+ Software bugs can potentially cause monetary and human loss
+Real-world examples of software bug consequences
+Canada's Therac-25 radiation therapy machine (1985)
+Malfunctioned due to a software bug, delivering lethal radiation doses and causing 3 deaths and 3 critical injuries
+Code Coverage: A key aspect is code coverage, which involves testing every single line of your code
+Security and compliance
+Checks for unsafe coding practices or missing validations
+Reduces risk of vulnerabilities
+Step 3: Refactor (REFACTOR)
+Benefit
+Description
+Now that everything works, you clean up: - Make code cleaner or more readable. - Add extra validation. - Ensure tests still pass after refactoring. 
+Team collaboration
+Encourages communication and constructive feedback
+Builds a stronger, more cohesive engineering culture
+Better code quality
+Forces you to define clear, testable behavior before coding
+Major US Bank Error (May 1996)
+A software bug credited the bank accounts of 823 customers with $920 million
+Stub
+returns predefined responses to method calls without real logic
+The What (Was) The How (Wie) The Where and When (Wo und Wann)
+"or not?,,,""https://lkml.iu.edu/hypermail/linux/kernel/1510.3/02866.html"""
+Clarity of purpose
+Helps you think through design and requirements
+Stubs passive doubles
+Dummy
+only needed because a method requires an object, but it is not actually used
+Why Developers Use TDD
+Less debugging later
+Tests catch errors immediately after they’re introduced
+Evolution of Software Testing
+Agile principles: Embrace change, stick to shorter cycles, and collaborate more
+You can safely change code knowing tests will catch breakages
+Easier refactoring
+Martin Fowler and others simplified things by grouping them
+provide data state-based testing
+Fake
+a simplified but working implementation
+in-memory database instead of a real one
+Purpose: Component tests are designed to test a complete section of your application in isolation
+Testing was not a priority, except for a few instances like NASA's Project Mercury (1958), where Gerry Weinberg led the first professional testing group
+Y2K Problem (Late 1990s): The issue of computers not recognizing the year 2000 date transition led to millions of dollars being spent on programmers to fix software, making software testing very popular
+Agile Manifesto (2001): A new approach to software development that emerged as a direct response to traditional methods (like Waterfall)
+Impact on testing: Testers became required members of the engineering team from the very start, maintaining product quality
+High test coverage
+You automatically build a strong suite of automated tests
+Automated tests became more widespread, making feedback exchanges instant and bug fixes happen at the time of coding
+Types
+Meszaros – xUnit Test Patterns
+Level 2: Component Testing
+Isolation through Mocking: To achieve this isolation, other components (like the front-end or database) are mocked out
+Mock
+checks whether certain method calls have happened (expectations on behavior)
+Mockito
+functional
+Mocks active doubles
+Ensuring Unit Integration: Component tests ensure that the individual units, which were tested at the lowest level, work well together when combined into a component
+Spy
+To observe method calls and record information without affecting their behavior.
+Automated vs. Manual Testing
+What
+What needs to be tested?
+verify behavior interaction-based testing
+non-functional
+ Automated Testing: Uses tools that allow developers to write code for the sole purpose of testing the main application code
+Manual Testing: A human clicks on buttons and fills out forms to test the application
+What is out of scope?
+The testing pyramid illustrates that tests at the bottom should make up the majority of tests in a test suite
+Mocking Libs / Framworks
+The Testing Pyramid
+As you move up the pyramid, tests become slower, more complex, and take more time to maintain
+Testing Levels
+Best practices
+Jest / Sinon (JavaScript)
+Mockito (Java)
+Moq (.NET)
+unittest.mock / pytest-mock (Python)
+Closely related to component testing, and often grouped at the same level in the pyramid, is Integration Testing
+When TDD Works Best
+When TDD Might Be Overkill
+'- Developer writes code and pushes it to a branch. - They open a pull request (PR) or merge request (MR) in a system like GitHub, GitLab, or Bitbucket. - Reviewers are assigned — usually teammates or senior devs. - Reviewers comment directly on the code, asking questions or suggesting changes. - The original developer updates the code and pushes again. - Once approved, the code is merged into the main branch.'
+How Code Reviews Usually Work
+﻿Purpose: While component tests mock out external dependencies, integration tests aim to verify that integrations between different components or modules actually work
+Eamples
+This includes testing things like database connections, ensuring correct SQL queries, verifying calls to other APIs, or making sure messages are correctly written to a message queue
+When requirements are clear and can be described in terms of expected behavior
+In backend systems, APIs, libraries, or algorithm-heavy projects
+When you want a safety net for frequent refactoring
+In early-stage prototypes (where requirements change constantly)
+In UI-heavy code (harder to test automatically)
+When speed of iteration is more critical than structure
+Level 2: Integration Testing
+Execution: Like unit and component tests, integration tests are generally run as part of the build process, often facilitated by tools like Docker to spin up necessary services (e.g., a database)
+How
+Approach & Methods
+Sometimes it’s more important to build something quickly and try it out than to have perfectly structured, well-tested code (MVP)
+White Box testing: When written by a developer who tests the internal logic, such as a database repository
+White Box vs. Black Box: Integration tests can be classified as
+Black Box testing: When written by a tester who interacts with the API without needing to know its internal workings, observing external behavior
+'- Logic correctness (“Does this actually solve the problem?”) - Edge cases and potential bugs - Code readability and naming conventions - Adherence (Einhaltung) to architecture patterns (e.g., MVC, clean architecture) - Unit tests and test coverage - Security and data handling - Performance and resource usage'
+Teststrategie (Test Strategy)
+What Reviewers Typically Look For
+Manual vs. automated testing
+White-box, black-box, grey-box approaches 
+Test Levels (e.g., Unit Testing, Integration Testing)
+Test Doubles (Mock, Stub)
+ Key Concepts from Modul 450
+ Automation Testing
+Tools, frameworks
+Code Reviews
+Test Driven Development (TDD)
+Best Practices
+For Reviewers
+For Authors
+Test Environment
+Purpose: E2E tests simulate actual user behaviors to ensure that everything in the application is working as expected from start to finish
+Be respectful and constructive (“I think this could be simplified by…”)
+Focus on the code, not the person
+Don’t nitpick small things that linters could catch
+Write clear commit messages and PR descriptions
+Keep changes small and focused
+Respond thoughtfully to feedback — it’s about improving the code, not ego
+Level 3: End-to-End (E2E) Testing
+Form: These are typically automated UI tests that drive a web browser or device, often using tools like Selenium or Cypress
+the quality,
+Where / When / Who
+Roles & Responsibilities
+Who performs which tests? (e.g., developers, QA engineers, business analysts)
+Scope: E2E tests combine aspects of functional testing (e.g., verifying login functionality) and acceptance testing (ensuring the application meets business requirements)
+They are often written in Gherkin language (Given-When-Then pattern) to make them understandable to business stakeholders
+Conclusion 
+Software testing is a critical process for ensuring ...
+correctness,
+"Characteristics: E2E tests can be very time-consuming, sometimes taking several hours to run, which means they are often run overnight or in a dedicated ""critical group"" before deployment"
+Entry & Exit Criteria
+ It helps prevent costly and dangerous bugs from reaching end-users.
+Automation is key for efficient and comprehensive testing in modern development
+and reliability of software.
+Unlike lower-level tests, E2E tests require all components to be working together and are typically executed on environments like QA (Quality Assurance) or UAT (User Acceptance Testing)
+When can testing start? (entry) 
+When is testing considered complete? (exit) 
+Purpose: These are tests performed by human testers, clicking buttons and filling out forms. Manual testing is reserved for scenarios that are too complicated to automate or where the time and effort to automate them are not worthwhile
+Level 4: Manual Testing
+Efficiency: While essential for certain tasks, manual testing is generally not efficient for large-scale products
+"Goal: Ideally, the majority of tests should be automated to avoid a ""vicious cycle"" where there isn't enough time to test the application before each release"
+In short
+The test strategy defines the big picture of testing—methods, tools, and rules—so that all team members work consistently towards ensuring quality.
