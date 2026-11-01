@@ -1,0 +1,36 @@
+# Place this file in the ROOT of the Git repository.
+# If your repo root IS the backend folder, delete the "cd recipe-planner-backend" part.
+image: maven:3.9-eclipse-temurin-17
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - cd recipe-planner-backend
+    - mvn -B compile
+
+unit-tests:
+  stage: test
+  script:
+    - cd recipe-planner-backend
+    - mvn -B test
+    - awk -F, 'NR>1{m+=$4;c+=$5} END{printf "Coverage: %.1f%%\n", 100*c/(m+c)}' target/site/jacoco/jacoco.csv
+  coverage: '/Coverage: \d+\.\d+%/'
+  artifacts:
+    when: always
+    expire_in: 1 week
+    paths:
+      - recipe-planner-backend/target/site/jacoco/
+      - recipe-planner-backend/target/surefire-reports/
+    reports:
+      junit: recipe-planner-backend/target/surefire-reports/TEST-*.xml
